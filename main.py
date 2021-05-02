@@ -12,6 +12,7 @@ def main():
     control = 0
     while control == 0:
         print("choices:\n1.search:\n2.put\n3.list\n4.remove\n5.clear\n6.first\n7.last\n8.quit")
+        print("9.sort")
 
         while True:
             try:
@@ -81,6 +82,18 @@ def main():
         elif x == 8:
             control = 1
             print("thank you so much for your time and have a lovely day!")
+
+        # only 6 mintues left when this was started
+        elif x == 9:
+            list_size = len(linked_list)
+            organized_numbers = False
+            while not organized_numbers:
+                organized_numbers = True
+                for x in range(0, list_size-1):
+                    if linked_list[x] > linked_list[x+1]:
+                        organized_numbers = False
+                        linked_list[x], linked_list[x+1] = linked_list[x+1], linked_list[x]
+            print(linked_list)
 
         # error catching
         else:
